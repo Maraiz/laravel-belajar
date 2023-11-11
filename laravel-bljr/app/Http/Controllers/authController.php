@@ -9,7 +9,7 @@ use Laravel\Socialite\Facades\Socialite;
 class authController extends Controller
 {
     function index (){
-        
+        return view('auth.index');
     }
     function redirect(){
         return Socialite::driver('google')->redirect();
@@ -32,7 +32,7 @@ class authController extends Controller
                 );
                 return '<h1>Selamat Anda Berhasil Masuk</h1>';
         }else{
-            return '<h1>Email Tidak Terdaftar</h1>';
+            return redirect()-> to ('auth')->with('error','Akun yang anda masukan tidak terdaftar untuk menggunakan web Admin');
         }
 
 
