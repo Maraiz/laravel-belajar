@@ -30,9 +30,7 @@ Route::get('/auth/logout', [authController::class,'logout']);
 
 Route::prefix('dashboard')->middleware('auth')->group (
     function () {
-        Route::get('/', function(){
-            return view ('dashboard.index');
-        });
-        Route::get('halaman', [halamanController::class,'index']);
+        Route::get('/',[halamanController::class,'index']);
+        Route::resource('halaman', halamanController::class);
     }
 );
