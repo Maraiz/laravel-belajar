@@ -1,1 +1,3 @@
 nullable -> voleh dikosongkan
+
+sourcut untuk menuju direktory dan mengecek route nya berikan perintah php artisan route:list di terminal"{{ route('experience.create') }}"
